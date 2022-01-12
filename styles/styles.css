@@ -1,0 +1,9 @@
+.completed {
+  color: gray;
+  text-decoration: line-through;
+}
+
+.clicked {
+  background-color: red;
+}
+/*# sourceMappingURL=styles.css.map */
