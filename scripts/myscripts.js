@@ -18,6 +18,65 @@
 5) add an event listener to see if that one is completed
 and another event listener to delete/display:none;
 */
+const newTaskInput = document.getElementById('newTaskInput');
+console.dir(newTaskInput);
+const addButton = document.getElementById('addButton');
+console.dir(addButton);
+// const lengthUl = document.querySelector('ul').length;
+// console.log(lengthUl);
+
+
+addButton.addEventListener('click',() => {
+    
+    const newInnerHTML = newTaskInput.value;
+    console.log(newTaskInput.value);
+    
+    // Get the number for the new item
+    const lengthUl = document.querySelector('ul').childElementCount;
+    console.log(lengthUl);
+    const newLength = lengthUl +1;
+    console.log(newLength);
+
+    // making the new li element
+    const newID = "list-item"+newLength;
+    console.log(newID);
+    const newTaskItemElement = document.createElement('li');
+    newTaskItemElement.classList = "list-item";
+    newTaskItemElement.id = newID;
+    newTaskItemElement.innerHTML= newInnerHTML;
+    console.log(newTaskItemElement); 
+
+    // making the new checkmark element
+    const newCheckBox = document.createElement('input');
+    const checkBoxClasses = "checkbox checkbox"+newLength;
+    newCheckBox.classList=checkBoxClasses;
+    newCheckBox.type= "checkbox";
+    console.log(newCheckBox);
+    // Make a new event listener fot that checkbox using the id, maybe? 
+    // We might need to make this a class thing where when you hit the button it creates a whole new object with 
+    //built in functions
+    newCheckBox.addEventListener('click', ()=> {
+    newTaskItemElement.classList.toggle('completed');
+})
+
+newTaskItemElement.prepend(newCheckBox);
+const parentUL = document.querySelector('ul');
+parentUL.appendChild(newTaskItemElement);
+
+
+
+
+    //making the new delete button
+const newDeleteButton = document.createElement('button');
+newDeleteButton.classList = "deleteButton";
+newDeleteButton.innerHTML="x"
+newTaskItemElement.appendChild(newDeleteButton);
+newDeleteButton.addEventListener('click', () => {
+    newDeleteButton.parentElement.style.display = "none";
+ })
+
+
+})
 
 /* When clicking any of the checkboxes
  use toggle to change class to "completed" 
@@ -31,6 +90,7 @@ deleteButton.addEventListener('click', () => {
     deleteButton.parentElement.style.display = "none";
  })
 
+ 
 
 //Additional Value Action
 //It would be nice to have the option to save all of the unchecked
