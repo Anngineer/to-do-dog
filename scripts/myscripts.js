@@ -1,12 +1,3 @@
-//Note to self for programming:
-// I don't really like how they set this up, but look at the for loops for ideas.
-// https://www.w3schools.com/howto/howto_js_todolist.asp 
-
-
-
-
-
-
 /*--------------------JavaScript Plan of Attack -----------------*/
 
 /* When click on addButton 
@@ -26,8 +17,10 @@ console.dir(addButton);
 // console.log(lengthUl);
 
 
-addButton.addEventListener('click',() => {
-    
+// The function that creates a new list item.  You might want to clean this up
+// or turn it into its own object.
+function createNewListItem() {
+
     const newInnerHTML = newTaskInput.value;
     console.log(newTaskInput.value);
     
@@ -57,25 +50,45 @@ addButton.addEventListener('click',() => {
     //built in functions
     newCheckBox.addEventListener('click', ()=> {
     newTaskItemElement.classList.toggle('completed');
-})
+    })
 
-newTaskItemElement.prepend(newCheckBox);
-const parentUL = document.querySelector('ul');
-parentUL.appendChild(newTaskItemElement);
+
+
+
+
+
+    newTaskItemElement.prepend(newCheckBox);
+    const parentUL = document.querySelector('ul');
+    parentUL.appendChild(newTaskItemElement);
 
 
 
 
     //making the new delete button
-const newDeleteButton = document.createElement('button');
-newDeleteButton.classList = "deleteButton";
-newDeleteButton.innerHTML="x"
-newTaskItemElement.appendChild(newDeleteButton);
-newDeleteButton.addEventListener('click', () => {
-    newDeleteButton.parentElement.style.display = "none";
- })
+    const newDeleteButton = document.createElement('button');
+    newDeleteButton.classList = "deleteButton";
+    newDeleteButton.innerHTML="x"
+    newTaskItemElement.appendChild(newDeleteButton);
+    newDeleteButton.addEventListener('click', () => {
+        newDeleteButton.parentElement.style.display = "none";
+    })
 
 
+
+
+
+}
+
+addButton.addEventListener('click', () =>{
+    createNewListItem();
+    newTaskInput.value="";
+});
+// newTaskInput.addEventListener('')
+newTaskInput.addEventListener("keyup", ({key}) => {
+    if (key === "Enter") {
+        createNewListItem();
+        newTaskInput.value="";
+    }
 })
 
 /* When clicking any of the checkboxes
