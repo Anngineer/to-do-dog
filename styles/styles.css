@@ -48,7 +48,6 @@ main {
 #navbar {
   padding: 10px 15px;
   margin: 0;
-  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -65,10 +64,6 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  z-index: 500;
-  /*This makes sure that the nav is always visible on top of any other element*/
-  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-          box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
 
 #navbar a {
@@ -83,11 +78,12 @@ main {
   font-size: 1.3rem;
 }
 
-/*-------- TO DO LIST SECTON--------*/
-#to-do-section {
-  padding-top: 5rem;
+#navbar a img {
+  padding-right: 1rem;
+  height: 2rem;
 }
 
+/*-------- TO DO LIST SECTON--------*/
 #to-do-section li {
   list-style: none;
 }
