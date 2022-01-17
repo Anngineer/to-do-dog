@@ -1,9 +1,9 @@
-.completed {
-  color: gray;
-  text-decoration: line-through;
-}
-
 li {
   list-style: none;
+}
+
+li.completed {
+  color: gray;
+  text-decoration: line-through;
 }
 /*# sourceMappingURL=styles.css.map */
