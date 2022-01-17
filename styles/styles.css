@@ -2,4 +2,8 @@
   color: gray;
   text-decoration: line-through;
 }
+
+li {
+  list-style: none;
+}
 /*# sourceMappingURL=styles.css.map */

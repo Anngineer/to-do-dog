@@ -18,6 +18,8 @@ const addButton = document.getElementById("addButton");
 //Create an array to store active tasks to use in the future.
 const savedTaskList = [];
 
+//Name the example li so it can be deleted on the first run
+const exampleLI = document.getElementById("example-li");
 /*-------Event Listeners on the textbox and add-task buttons----*/
 
 // Event listener for clicking the task add button
@@ -44,6 +46,11 @@ newTaskInput.addEventListener("keyup", ({ key }) => {
 /*--------------------FUNCTION for creating new list items -----------------*/
 
 function createNewListItem() {
+  //if the example element still exists, delete it.
+  if (exampleLI) {
+    exampleLI.remove();
+  }
+
   // Get the string for task from the text box
   const newInnerText = newTaskInput.value;
 
@@ -102,7 +109,7 @@ function createNewListItem() {
     */
 }
 
-/*-------------------Additional Value Action--------------------*/
+/*-------------------Additional JS Value Action--------------------*/
 
 // 1. SAVING LIST ITEMS
 //It would be nice to have the option to save all of the unchecked
@@ -117,6 +124,11 @@ function createNewListItem() {
 // Add in event listeners to make the dog move when you add an item, delete an item,
 // and give it presents and make it move when you check an item off.
 
+//3. Initital example LI
+//  Change the example li to different positive statements
+// They can be from the dog. Make an array of these and then
+// randomly insert them with a function that automatically goes off
+// at the beginning of the load.
 /* ----------ANIMATION FUNCTIONS----------------------------*/
 
 /* -----------------Playing around in the console------------*/
