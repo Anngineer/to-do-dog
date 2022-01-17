@@ -36,49 +36,90 @@ main {
   /* background-image: url(""); */
   display: flex;
   flex-direction: column;
-}
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 
-/*-------NAVBAR---------------*/
-/* CSS for the navbar to make it stick while scrolling,
+  /*-------NAVBAR---------------*/
+  /* CSS for the navbar to make it stick while scrolling,
     take up the width of the page, and position the flex-items*/
 
-#navbar {
-  padding: 10px 15px;
-  margin: 0;
+  #navbar {
+    padding: 10px 15px;
+    margin: 0;
 
-  top: 0;
-  left: 0;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-
-  // position: fixed;
-  // z-index: 500; /*This makes sure that the nav is always visible on top of any other element*/
-
-  // box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-  a {
-    img {
-      padding-right: 1rem;
-      height: 2rem;
-    }
+    top: 0;
+    left: 0;
+    width: 100%;
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    text-decoration: none;
-    color: $text-dark;
-    font-size: 1.3rem;
-  }
-}
 
-/*-------- TO DO LIST SECTON--------*/
-#to-do-section {
-  // padding-top: 5rem; // We only need this if the navbar is fixed
-  li {
-    list-style: none;
-    &.completed {
-      color: gray;
-      text-decoration: line-through;
+    // position: fixed;
+    // z-index: 500; /*This makes sure that the nav is always visible on top of any other element*/
+
+    // box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    a {
+      img {
+        padding-right: 1rem;
+        height: 2rem;
+      }
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: $text-dark;
+      font-size: 1.3rem;
+    }
+  }
+
+  /*-------- TO DO LIST SECTON--------*/
+  #to-do-section {
+    // padding-top: 5rem; // We only need this if the navbar is fixed
+    width: clamp(330px, 20rem, 40rem);
+    margin-top: 3rem;
+    margin-bottom: 10rem;
+    background-color: #f1f0e4;
+    border-radius: 20px;
+
+    h3 {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #152c3e;
+      color: #f8f8f1;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      padding: 1rem;
+    }
+
+    ul {
+      padding: 1rem;
+      text-align: left;
+      li {
+        margin-top: 0.3rem;
+        margin-bottom: 0.3rem;
+        padding: 0.3rem;
+        padding-left: 0.5rem;
+        background-color: #f5f4eb;
+        border-radius: 4px;
+        box-shadow: 3px -3px 5px #545f593f, -3px 0 5px #545f593b;
+        list-style: none;
+        &.completed {
+          color: gray;
+          text-decoration: line-through;
+        }
+        input {
+          margin-right: 0.5rem;
+        }
+        .deleteButton {
+          align-self: right;
+        }
+      }
+    }
+    #list-bottom-decoration {
+      height: 1.5rem;
+      background-color: #152c3e;
+      border-bottom-right-radius: 20px;
+      border-bottom-left-radius: 20px;
     }
   }
 }

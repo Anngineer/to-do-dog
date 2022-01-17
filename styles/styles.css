@@ -40,12 +40,20 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  /*-------NAVBAR---------------*/
+  /* CSS for the navbar to make it stick while scrolling,
+    take up the width of the page, and position the flex-items*/
+  /*-------- TO DO LIST SECTON--------*/
 }
 
-/*-------NAVBAR---------------*/
-/* CSS for the navbar to make it stick while scrolling,
-    take up the width of the page, and position the flex-items*/
-#navbar {
+main #navbar {
   padding: 10px 15px;
   margin: 0;
   top: 0;
@@ -66,7 +74,7 @@ main {
           align-items: center;
 }
 
-#navbar a {
+main #navbar a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -78,18 +86,64 @@ main {
   font-size: 1.3rem;
 }
 
-#navbar a img {
+main #navbar a img {
   padding-right: 1rem;
   height: 2rem;
 }
 
-/*-------- TO DO LIST SECTON--------*/
-#to-do-section li {
+main #to-do-section {
+  width: clamp(330px, 20rem, 40rem);
+  margin-top: 3rem;
+  margin-bottom: 10rem;
+  background-color: #f1f0e4;
+  border-radius: 20px;
+}
+
+main #to-do-section h3 {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #152c3e;
+  color: #f8f8f1;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  padding: 1rem;
+}
+
+main #to-do-section ul {
+  padding: 1rem;
+  text-align: left;
+}
+
+main #to-do-section ul li {
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
+  padding: 0.3rem;
+  padding-left: 0.5rem;
+  background-color: #f5f4eb;
+  border-radius: 4px;
+  -webkit-box-shadow: 3px -3px 5px #545f593f, -3px 0 5px #545f593b;
+          box-shadow: 3px -3px 5px #545f593f, -3px 0 5px #545f593b;
   list-style: none;
 }
 
-#to-do-section li.completed {
+main #to-do-section ul li.completed {
   color: gray;
   text-decoration: line-through;
+}
+
+main #to-do-section ul li input {
+  margin-right: 0.5rem;
+}
+
+main #to-do-section ul li .deleteButton {
+  -ms-flex-item-align: right;
+      -ms-grid-row-align: right;
+      align-self: right;
+}
+
+main #to-do-section #list-bottom-decoration {
+  height: 1.5rem;
+  background-color: #152c3e;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
 }
 /*# sourceMappingURL=styles.css.map */
