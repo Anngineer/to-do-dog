@@ -20,6 +20,11 @@ const savedTaskList = [];
 
 //Name the example li so it can be deleted on the first run
 const exampleLI = document.getElementById("example-li");
+
+// There were some issues where the checkbox loaded checked, so if that happens again, use
+// var checkbox = document.querySelector("input");
+// checkbox.checked = "";
+
 /*-------Event Listeners on the textbox and add-task buttons----*/
 
 // Event listener for clicking the task add button
@@ -136,8 +141,9 @@ function createNewListItem() {
 // This is just a blueprint for the first task item that's automatically added in the HTML.
 var taskList = document.getElementsByClassName("list-item");
 const taskItem = document.querySelector("li");
-// when clicked
-const checkbox = document.querySelector("input");
+
+//On load, at the top of the page, we might declare the checkbox name so we'll use var in case that's needed again.
+var checkbox = document.querySelector("input");
 checkbox.addEventListener("click", () => {
   taskItem.classList.toggle("completed");
 });
