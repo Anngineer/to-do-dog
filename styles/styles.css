@@ -114,6 +114,12 @@ main #to-do-section ul {
 }
 
 main #to-do-section ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin-top: 0.3rem;
   margin-bottom: 0.3rem;
   padding: 0.3rem;

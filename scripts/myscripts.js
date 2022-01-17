@@ -68,8 +68,13 @@ function createNewListItem() {
   const newTaskItemElement = document.createElement("li");
   newTaskItemElement.classList = "list-item";
   newTaskItemElement.id = newID;
-  newTaskItemElement.innerText = newInnerText;
+  // newTaskItemElement.innerText = newInnerText;
   savedTaskList.push(newInnerText);
+
+  //make a left side div with the inner text of the value
+  const leftDiv = document.createElement("div");
+  leftDiv.classList.add("left-side-of-li");
+  leftDiv.innerText = newInnerText;
 
   // Create new checkmark element and add it to the li element
   const newCheckBox = document.createElement("input");
@@ -81,7 +86,10 @@ function createNewListItem() {
     newTaskItemElement.classList.toggle("completed");
     // ADD ANIMATION OF REWARD
   });
-  newTaskItemElement.prepend(newCheckBox);
+
+  //prepend leftDiv onto the new LI, then prepend the checkbox on there.
+  newTaskItemElement.prepend(leftDiv);
+  leftDiv.prepend(newCheckBox);
 
   //Create delete button and adding it to the end inside the li element
   const newDeleteButton = document.createElement("button");
