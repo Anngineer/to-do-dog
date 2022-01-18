@@ -33,7 +33,9 @@ body {
 
 /* -------MAIN------- */
 main {
-  /* background-image: url(""); */
+  background-image: url("../images/sansbearsMountain.png");
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -47,7 +49,6 @@ main {
   #navbar {
     padding: 10px 15px;
     margin: 0;
-
     top: 0;
     left: 0;
     width: 100%;
@@ -61,14 +62,14 @@ main {
 
     // box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
     a {
+      color: honeydew;
       img {
-        padding-right: 1rem;
-        height: 2rem;
+        padding-right: 0.6rem;
+        height: 2.3rem;
       }
       display: flex;
       align-items: center;
       text-decoration: none;
-      color: $text-dark;
       font-size: 1.3rem;
     }
   }

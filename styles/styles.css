@@ -32,7 +32,9 @@ body {
 
 /* -------MAIN------- */
 main {
-  /* background-image: url(""); */
+  background-image: url("../images/sansbearsMountain.png");
+  background-repeat: no-repeat;
+  background-size: cover;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -75,6 +77,7 @@ main #navbar {
 }
 
 main #navbar a {
+  color: honeydew;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -82,13 +85,12 @@ main #navbar a {
       -ms-flex-align: center;
           align-items: center;
   text-decoration: none;
-  color: #080f0b;
   font-size: 1.3rem;
 }
 
 main #navbar a img {
-  padding-right: 1rem;
-  height: 2rem;
+  padding-right: 0.6rem;
+  height: 2.3rem;
 }
 
 main #to-do-section {
