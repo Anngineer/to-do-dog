@@ -56,21 +56,30 @@
       </nav>
       <section id="to-do-section">
         <h3>To Do List</h3>
-        <ul id="task-list-UL">
-          <li id="example-li" class="list-item">
-            <div class="left-side-of-li">
-              <input type="checkbox" class="checkbox checkbox1" id="" />Have a
-              sip of water
-            </div>
-            <button class="deleteButton">x</button>
-          </li>
-          <!-- <li id="list-item2" class="list-item "><input type="checkbox" class="checkbox checkbox1" name="Measure Flour" id="">Measure Flour<button class="deleteButton">x</button></li> -->
-          <!-- <li id="list-item3" class="list-item "><input type="checkbox" class="checkbox checkbox1" name="Scoop Sugar" id="">Scoop Sugar<button class="deleteButton">x</button></li> -->
-        </ul>
-
-        <input type="text" id="newTaskInput" /><br />
-        <button id="addButton">Add Task Item</button>
-        <div id="list-bottom-decoration"></div>
+        <div class="ul-wrapper">
+          <ul id="task-list-UL">
+            <li id="example-li" class="list-item">
+              <div class="left-side-of-li">
+                <input type="checkbox" class="checkbox checkbox1" id="" />Have a
+                sip of water
+              </div>
+              <button class="deleteButton"><i class="fas fa-trash"></i></button>
+            </li>
+            <!-- <li id="list-item2" class="list-item "><input type="checkbox" class="checkbox checkbox1" name="Measure Flour" id="">Measure Flour<button class="deleteButton">x</button></li> -->
+            <!-- <li id="list-item3" class="list-item "><input type="checkbox" class="checkbox checkbox1" name="Scoop Sugar" id="">Scoop Sugar<button class="deleteButton">x</button></li> -->
+          </ul>
+        </div>
+        <div class="add-task-div">
+          <input
+            type="text"
+            id="newTaskInput"
+            placeholder="Type new task here"
+          /><br />
+          <button id="addButton" alt="add task">
+            <i class="fas fa-plus"></i>
+          </button>
+          <div id="list-bottom-decoration"></div>
+        </div>
       </section>
     </main>
     <footer>

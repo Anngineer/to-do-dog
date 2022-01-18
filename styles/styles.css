@@ -97,6 +97,10 @@ main #to-do-section {
   margin-bottom: 10rem;
   background-color: #f1f0e4;
   border-radius: 20px;
+  -webkit-box-shadow: 3px -3px 10px #545f593b, -3px 0 10px #545f593b;
+          box-shadow: 3px -3px 10px #545f593b, -3px 0 10px #545f593b;
+  -webkit-box-shadow: 3px -3px 10px #545f590a, -3px 0 10px #545f590a;
+          box-shadow: 3px -3px 10px #545f590a, -3px 0 10px #545f590a;
 }
 
 main #to-do-section h3 {
@@ -108,12 +112,17 @@ main #to-do-section h3 {
   padding: 1rem;
 }
 
-main #to-do-section ul {
+main #to-do-section div.ul-wrapper {
+  height: clamp(5rem, 16rem, 80rem);
+  overflow-y: auto;
+}
+
+main #to-do-section div.ul-wrapper ul {
   padding: 1rem;
   text-align: left;
 }
 
-main #to-do-section ul li {
+main #to-do-section div.ul-wrapper ul li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -121,7 +130,7 @@ main #to-do-section ul li {
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin-top: 0.3rem;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.5rem;
   padding: 0.3rem;
   padding-left: 0.5rem;
   background-color: #f5f4eb;
@@ -131,23 +140,75 @@ main #to-do-section ul li {
   list-style: none;
 }
 
-main #to-do-section ul li.completed {
+main #to-do-section div.ul-wrapper ul li.completed {
   color: gray;
   text-decoration: line-through;
 }
 
-main #to-do-section ul li input {
-  margin-right: 0.5rem;
+main #to-do-section div.ul-wrapper ul li div.left-side-of-li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-main #to-do-section ul li .deleteButton {
+main #to-do-section div.ul-wrapper ul li div.left-side-of-li input.checkbox {
+  margin-right: 0.5rem;
+  margin-top: 0.1rem;
+}
+
+main #to-do-section div.ul-wrapper ul li .deleteButton {
   -ms-flex-item-align: right;
       -ms-grid-row-align: right;
       align-self: right;
+  margin-right: 0.5rem;
+  border: 0 solid gray;
+  padding: 0.3rem;
+  border-radius: 4px;
+  background-color: #f5f4eb;
+}
+
+main #to-do-section div.ul-wrapper ul li .deleteButton:hover {
+  background-color: #c8c8c8;
+}
+
+main #to-do-section input#newTaskInput {
+  background-color: #fbfbf5a1;
+  border-radius: 2px;
+  border: 0px solid #555555;
+  -webkit-box-shadow: inset 2px 2px 3px #9e9e9e94;
+          box-shadow: inset 2px 2px 3px #9e9e9e94;
+  padding: 0.5rem;
+  margin-top: 0.4rem;
+  margin-bottom: -3rem;
+  width: 90%;
+}
+
+main #to-do-section button#addButton {
+  position: relative;
+  z-index: 500;
+  bottom: -1.5rem;
+  background-color: #d68268;
+  border: none;
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 10px;
+  -webkit-box-shadow: 3px -3px 5px #545f593f, -3px 0 5px #545f593b;
+          box-shadow: 3px -3px 5px #545f593f, -3px 0 5px #545f593b;
+}
+
+main #to-do-section button#addButton i {
+  color: white;
+  font-size: 1.3rem;
 }
 
 main #to-do-section #list-bottom-decoration {
-  height: 1.5rem;
+  height: 3rem;
   background-color: #152c3e;
   border-bottom-right-radius: 20px;
   border-bottom-left-radius: 20px;

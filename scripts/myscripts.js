@@ -94,7 +94,7 @@ function createNewListItem() {
   //Create delete button and adding it to the end inside the li element
   const newDeleteButton = document.createElement("button");
   newDeleteButton.classList = "deleteButton";
-  newDeleteButton.innerText = "x";
+  newDeleteButton.innerHTML = "<i class='fas fa-trash'></i>";
   newTaskItemElement.appendChild(newDeleteButton);
   //Event listener to display:none when clicked and take the element's innerText off of the saved tasks array.
   newDeleteButton.addEventListener("click", () => {
