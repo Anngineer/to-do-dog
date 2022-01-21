@@ -54,6 +54,20 @@ function animateThroughSprite() {
   setTimeout(() => console.log("barkbarkbark"), 8 * timeInterval);
 }
 
+//Function for making the dog chill after the end of the animation
+function settleDownDog() {
+  setTimeout(() => {
+    dogSits();
+    console.log("dog sits");
+  }, 8 * timeInterval);
+}
+
+function settleDownTime(time) {
+  setTimeout(() => {
+    dogSits();
+    console.log("dog sits");
+  }, time);
+}
 // EVENT LISTENER FOR CLICKING
 
 // Establish the interval time
@@ -134,12 +148,21 @@ addButton.addEventListener("click", () => {
 
 // Event listener for hitting enter inside the textbox
 newTaskInput.addEventListener("keyup", ({ key }) => {
+  // ADD AN ANIMATION OF THE DOG SNIFFING REGARDLESS OF THE KEYUP
+  dogSniffs();
+  // MAKE A FUNCTION so that if the value box is set to zero or the person
+  //moves focus out of the input box, then you do setteDownTime
+  // if (newTaskInput="") {
+  //   settleDownTime(6000);
+  // }
+
   if (key === "Enter") {
     //Create a new List Item with this information using the function above.
 
     createNewListItem();
     // Reset the input box.
     newTaskInput.value = "";
+    //ANIMATION OF EXCITEMENT
   }
   // ADD ANIMATION OF EXCITEMENT
 });
@@ -181,8 +204,9 @@ function createNewListItem() {
   newCheckBox.addEventListener("click", () => {
     newTaskItemElement.classList.toggle("completed");
     // ADD ANIMATION OF REWARD
-    dogSniffs();
+    dogRuns();
     animateThroughSprite();
+    settleDownDog();
   });
 
   //prepend leftDiv onto the new LI, then prepend the checkbox on there.
@@ -204,13 +228,15 @@ function createNewListItem() {
     //ADD ANIMATION OF REWARD
     dogSits();
     animateThroughSprite();
+    settleDownDog();
   });
 
   //Insert the li element into the document
   const parentUL = document.getElementById("task-list-UL");
   parentUL.appendChild(newTaskItemElement);
-  dogRuns();
+  dogSniffs();
   animateThroughSprite();
+  settleDownDog();
   /* SUMMARY OF THIS FUNCTION 
     it's externally called when you click on addButton or when you hit ENTER inside the textbox 
     1) take the value of the input text box and save that
@@ -255,10 +281,16 @@ const taskItem = document.querySelector("li");
 var checkbox = document.querySelector("input");
 checkbox.addEventListener("click", () => {
   taskItem.classList.toggle("completed");
+  dogRuns();
+  animateThroughSprite();
+  settleDownDog();
 });
 // Have a click event set for the delete buttons that
 // will hide the parent list item
 const deleteButton = document.querySelector("button");
 deleteButton.addEventListener("click", () => {
   deleteButton.parentElement.style.display = "none";
+  dogSits();
+  animateThroughSprite();
+  settleDownDog();
 });
