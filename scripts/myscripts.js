@@ -32,18 +32,26 @@ function animateDog() {
   dogImage.style.backgroundPositionX = newPositionStrX;
   return (currentPositionX = newPositionStrX);
 }
+
+// Function to set to 0px
+function animateReset() {
+  dogImage.style.backgroundPositionX = "0px";
+  console.log("0px");
+}
+
 // Animation Function for moving through the full sprite range
 function animateThroughSprite() {
   console.log("bark!");
   animateDog(); //first animation image change
   setTimeout(() => animateDog(), timeInterval); //second animation image change
   setTimeout(() => animateDog(), 2 * timeInterval); // third
-  setTimeout(() => animateDog(), 3 * timeInterval); // fourth -- back to beginning
+  setTimeout(() => animateDog(), 3 * timeInterval); // fourth
   setTimeout(() => animateDog(), 4 * timeInterval); // 1st again
   setTimeout(() => animateDog(), 5 * timeInterval); // second
   setTimeout(() => animateDog(), 6 * timeInterval); // third
-  setTimeout(() => animateDog(), 7 * timeInterval); // fourth -- back to first image
-  setTimeout(() => console.log("barkbarkbark"), 7 * timeInterval);
+  setTimeout(() => animateDog(), 7 * timeInterval); // fourth
+  setTimeout(() => animateReset(), 8 * timeInterval); // 1st again -- reset to 0px
+  setTimeout(() => console.log("barkbarkbark"), 8 * timeInterval);
 }
 
 // EVENT LISTENER FOR CLICKING
