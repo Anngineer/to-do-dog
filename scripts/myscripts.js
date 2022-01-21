@@ -1,3 +1,91 @@
+// ---------------------------------------------------
+// ---------------------------------------------------
+
+// ---------------------------------------------------
+// ---------------------------------------------------
+
+// JAVASCRIPT FOR THE DOG
+
+// Set the sprite Width in integers
+var spriteWidthInt = 300;
+
+const dogImage = document.getElementById("sprite");
+/* It looks like we have to state what the background positiion is at the beginning i
+if we want to use animations*/
+
+// Set up the initial position
+var currentPositionX = dogImage.style.backgroundPositionX;
+// var currentPositionY = dogImage.style.backgroundPositionY;
+currentPositionX = "0px";
+// currentPositionY = "0px";
+
+//ANIMATION FUNCTION
+function animateDog() {
+  var currentPositionCutX = currentPositionX.slice(0, -2);
+  // console.log(currentPositionCutX);
+  var currentPositionIntX = parseInt(currentPositionCutX);
+  // console.log();
+  var newPositionIntX = currentPositionIntX - spriteWidthInt;
+  // console.log(newPositionIntX);
+  var newPositionStrX = `${newPositionIntX}px`;
+  console.log(newPositionStrX);
+  dogImage.style.backgroundPositionX = newPositionStrX;
+  return (currentPositionX = newPositionStrX);
+}
+// Animation Function for moving through the full sprite range
+function animateThroughSprite() {
+  console.log("bark!");
+  animateDog(); //first animation image change
+  setTimeout(() => animateDog(), timeInterval); //second animation image change
+  setTimeout(() => animateDog(), 2 * timeInterval); // third
+  setTimeout(() => animateDog(), 3 * timeInterval); // fourth -- back to beginning
+  setTimeout(() => animateDog(), 4 * timeInterval); // 1st again
+  setTimeout(() => animateDog(), 5 * timeInterval); // second
+  setTimeout(() => animateDog(), 6 * timeInterval); // third
+  setTimeout(() => animateDog(), 7 * timeInterval); // fourth -- back to first image
+  setTimeout(() => console.log("barkbarkbark"), 7 * timeInterval);
+}
+
+// EVENT LISTENER FOR CLICKING
+
+// Establish the interval time
+var timeInterval = 150;
+
+dogImage.addEventListener("click", () => {
+  animateThroughSprite();
+  // Yay, let's look at promises and await functions <3
+  // animateThroughSprite();
+});
+
+// Functions for pulling up other sprites
+function dogSits() {
+  dogImage.classList = ["sit"];
+  currentPositionX = "0px";
+}
+function dogRuns() {
+  dogImage.classList = ["run"];
+  currentPositionX = "0px";
+}
+
+function dogSleeps() {
+  dogImage.classList = ["sleep"];
+  currentPositionX = "0px";
+}
+function dogPlays() {
+  dogImage.classList = ["play"];
+  currentPositionX = "0px";
+}
+function dogSniffs() {
+  dogImage.classList = ["sniff"];
+  currentPositionX = "0px";
+}
+
+/*--------------------JavaScript For the TO DO -----------------*/
+/*-------------------------------------*/
+/*-------------------------------------*/
+/*-------------------------------------*/
+/*-------------------------------------*/
+
 /*--------------------JavaScript Plan of Attack -----------------*/
 
 // Clean Up Javascript for the part at the bottom that is a summary of how to do it.
@@ -85,6 +173,8 @@ function createNewListItem() {
   newCheckBox.addEventListener("click", () => {
     newTaskItemElement.classList.toggle("completed");
     // ADD ANIMATION OF REWARD
+    dogSniffs();
+    animateThroughSprite();
   });
 
   //prepend leftDiv onto the new LI, then prepend the checkbox on there.
@@ -104,12 +194,15 @@ function createNewListItem() {
     savedTaskList.splice(index, 1);
     parentLI.style.display = "none";
     //ADD ANIMATION OF REWARD
+    dogSits();
+    animateThroughSprite();
   });
 
   //Insert the li element into the document
   const parentUL = document.getElementById("task-list-UL");
   parentUL.appendChild(newTaskItemElement);
-
+  dogRuns();
+  animateThroughSprite();
   /* SUMMARY OF THIS FUNCTION 
     it's externally called when you click on addButton or when you hit ENTER inside the textbox 
     1) take the value of the input text box and save that
