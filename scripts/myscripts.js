@@ -155,6 +155,13 @@ newTaskInput.addEventListener("keyup", ({ key }) => {
   // if (newTaskInput="") {
   //   settleDownTime(6000);
   // }
+  newTaskInput.addEventListener(
+    "focusout",
+    () => {
+      settleDownTime(400);
+    },
+    { once: true }
+  );
 
   if (key === "Enter") {
     //Create a new List Item with this information using the function above.
