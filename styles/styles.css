@@ -49,12 +49,12 @@ main {
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
-  /*-------NAVBAR---------------*/
-  /* CSS for the navbar to make it stick while scrolling,
-    take up the width of the page, and position the flex-items*/
 }
 
-main #navbar {
+/*-------NAVBAR---------------*/
+/* CSS for the navbar to make it stick while scrolling,
+    take up the width of the page, and position the flex-items*/
+#navbar {
   padding: 10px 15px;
   margin: 0;
   top: 0;
@@ -75,7 +75,7 @@ main #navbar {
           align-items: center;
 }
 
-main #navbar a {
+#navbar a {
   color: honeydew;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -87,12 +87,12 @@ main #navbar a {
   font-size: 1.3rem;
 }
 
-main #navbar a img {
+#navbar a img {
   padding-right: 0.6rem;
   height: 2.3rem;
 }
 
-main #dog-and-task-wrapper {
+#dog-and-task-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -100,39 +100,39 @@ main #dog-and-task-wrapper {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  /* ------ THE DOG ANIMATION SECTION __________*/
-  /*-------- TO DO LIST SECTON--------*/
 }
 
-main #dog-and-task-wrapper #sprite {
+/* ------ THE DOG ANIMATION SECTION __________*/
+#sprite {
   height: 300px;
   width: 300px;
   margin-top: 15rem;
   margin-right: 8rem;
 }
 
-main #dog-and-task-wrapper #sprite.sit {
+#sprite.sit {
   background: url(../images/sprites/300/spritesiteye.png) 0px 0px;
   background: url(../images/sprites/300/spritesit.png) 0px 0px;
 }
 
-main #dog-and-task-wrapper #sprite.play {
+#sprite.play {
   background: url(../images/sprites/300/spriteplay.png) 0px 0px;
 }
 
-main #dog-and-task-wrapper #sprite.run {
+#sprite.run {
   background: url(../images/sprites/300/spriterun.png) 0px 0px;
 }
 
-main #dog-and-task-wrapper #sprite.sleep {
+#sprite.sleep {
   background: url(../images/sprites/300/spritesleep.png) 0px 0px;
 }
 
-main #dog-and-task-wrapper #sprite.sniff {
+#sprite.sniff {
   background: url(../images/sprites/300/spritesniff.png) 0px 0px;
 }
 
-main #dog-and-task-wrapper #to-do-section {
+/*-------- TO DO LIST SECTON--------*/
+#to-do-section {
   width: clamp(330px, 20rem, 40rem);
   margin-top: 3rem;
   margin-bottom: 10rem;
@@ -144,7 +144,7 @@ main #dog-and-task-wrapper #to-do-section {
           box-shadow: 3px -3px 10px #545f590a, -3px 0 10px #545f590a;
 }
 
-main #dog-and-task-wrapper #to-do-section h3 {
+h3 {
   font-family: Arial, Helvetica, sans-serif;
   background-color: #152c3e;
   color: #f8f8f1;
@@ -153,17 +153,17 @@ main #dog-and-task-wrapper #to-do-section h3 {
   padding: 1rem;
 }
 
-main #dog-and-task-wrapper #to-do-section div.ul-wrapper {
+div.ul-wrapper {
   height: clamp(5rem, 16rem, 80rem);
   overflow-y: auto;
 }
 
-main #dog-and-task-wrapper #to-do-section div.ul-wrapper ul {
+div.ul-wrapper ul {
   padding: 1rem;
   text-align: left;
 }
 
-main #dog-and-task-wrapper #to-do-section div.ul-wrapper ul li {
+div.ul-wrapper ul li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -181,12 +181,12 @@ main #dog-and-task-wrapper #to-do-section div.ul-wrapper ul li {
   list-style: none;
 }
 
-main #dog-and-task-wrapper #to-do-section div.ul-wrapper ul li.completed {
+div.ul-wrapper ul li.completed {
   color: gray;
   text-decoration: line-through;
 }
 
-main #dog-and-task-wrapper #to-do-section div.ul-wrapper ul li div.left-side-of-li {
+div.ul-wrapper ul li div.left-side-of-li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -198,12 +198,12 @@ main #dog-and-task-wrapper #to-do-section div.ul-wrapper ul li div.left-side-of-
           align-items: center;
 }
 
-main #dog-and-task-wrapper #to-do-section div.ul-wrapper ul li div.left-side-of-li input.checkbox {
+div.ul-wrapper ul li div.left-side-of-li input.checkbox {
   margin-right: 0.5rem;
   margin-top: 0.1rem;
 }
 
-main #dog-and-task-wrapper #to-do-section div.ul-wrapper ul li .deleteButton {
+div.ul-wrapper ul li .deleteButton {
   -ms-flex-item-align: right;
       -ms-grid-row-align: right;
       align-self: right;
@@ -214,11 +214,11 @@ main #dog-and-task-wrapper #to-do-section div.ul-wrapper ul li .deleteButton {
   background-color: #f5f4eb;
 }
 
-main #dog-and-task-wrapper #to-do-section div.ul-wrapper ul li .deleteButton:hover {
+div.ul-wrapper ul li .deleteButton:hover {
   background-color: #c8c8c8;
 }
 
-main #dog-and-task-wrapper #to-do-section input#newTaskInput {
+input#newTaskInput {
   background-color: #fbfbf5a1;
   border-radius: 2px;
   border: 0px solid #555555;
@@ -230,7 +230,7 @@ main #dog-and-task-wrapper #to-do-section input#newTaskInput {
   width: 90%;
 }
 
-main #dog-and-task-wrapper #to-do-section button#addButton {
+button#addButton {
   position: relative;
   z-index: 500;
   bottom: -1.5rem;
@@ -243,12 +243,12 @@ main #dog-and-task-wrapper #to-do-section button#addButton {
           box-shadow: 3px -3px 5px #545f593f, -3px 0 5px #545f593b;
 }
 
-main #dog-and-task-wrapper #to-do-section button#addButton i {
+button#addButton i {
   color: white;
   font-size: 1.3rem;
 }
 
-main #dog-and-task-wrapper #to-do-section #list-bottom-decoration {
+#list-bottom-decoration {
   height: 3rem;
   background-color: #152c3e;
   border-bottom-right-radius: 20px;

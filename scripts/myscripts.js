@@ -132,8 +132,8 @@ const savedTaskList = [];
 const exampleLI = document.getElementById("example-li");
 
 // There were some issues where the checkbox loaded checked, so if that happens again, use
-// var checkbox = document.querySelector("input");
-// checkbox.checked = "";
+var checkbox = document.querySelector("input");
+checkbox.checked = "";
 
 /*-------Event Listeners on the textbox and add-task buttons----*/
 
