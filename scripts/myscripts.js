@@ -21,12 +21,18 @@ currentPositionX = "0px";
 
 //ANIMATION FUNCTION
 function animateDog() {
+  // Get the width of the element to determine what the step will be
+  var dogWidthCutX = dogImage.clientWidth;
+  console.log(`The width is ${dogWidthCutX}`);
+  var dogWidthInt = parseInt(dogWidthCutX);
+  console.log(dogWidthInt);
+  //
   var currentPositionCutX = currentPositionX.slice(0, -2);
   // console.log(currentPositionCutX);
   var currentPositionIntX = parseInt(currentPositionCutX);
   // console.log();
-  var newPositionIntX = currentPositionIntX - spriteWidthInt;
-  // console.log(newPositionIntX);
+  var newPositionIntX = currentPositionIntX - dogWidthInt;
+  console.log(`New Position is ${newPositionIntX}`);
   var newPositionStrX = `${newPositionIntX}px`;
   console.log(newPositionStrX);
   dogImage.style.backgroundPositionX = newPositionStrX;
