@@ -19,6 +19,31 @@ var currentPositionX = dogImage.style.backgroundPositionX;
 currentPositionX = "0px";
 // currentPositionY = "0px";
 
+// MOVING FIRST TASK
+/* -----------------Playing around in the console------------*/
+
+// This is just a blueprint for the first task item that's automatically added in the HTML.
+var taskList = document.getElementsByClassName("list-item");
+const taskItem = document.querySelector("li");
+
+//On load, at the top of the page, we might declare the checkbox name so we'll use var in case that's needed again.
+var checkbox = document.querySelector("input");
+checkbox.addEventListener("click", () => {
+  taskItem.classList.toggle("completed");
+  dogRuns();
+  animateThroughSprite();
+  settleDownDog();
+});
+// Have a click event set for the delete buttons that
+// will hide the parent list item
+const deleteButton = document.querySelector("button");
+deleteButton.addEventListener("click", () => {
+  deleteButton.parentElement.style.display = "none";
+  dogSits();
+  animateThroughSprite();
+  settleDownDog();
+});
+
 //ANIMATION FUNCTION
 function animateDog() {
   // Get the width of the element to determine what the step will be
@@ -282,27 +307,3 @@ function createNewListItem() {
 // randomly insert them with a function that automatically goes off
 // at the beginning of the load.
 /* ----------ANIMATION FUNCTIONS----------------------------*/
-
-/* -----------------Playing around in the console------------*/
-
-// This is just a blueprint for the first task item that's automatically added in the HTML.
-var taskList = document.getElementsByClassName("list-item");
-const taskItem = document.querySelector("li");
-
-//On load, at the top of the page, we might declare the checkbox name so we'll use var in case that's needed again.
-var checkbox = document.querySelector("input");
-checkbox.addEventListener("click", () => {
-  taskItem.classList.toggle("completed");
-  dogRuns();
-  animateThroughSprite();
-  settleDownDog();
-});
-// Have a click event set for the delete buttons that
-// will hide the parent list item
-const deleteButton = document.querySelector("button");
-deleteButton.addEventListener("click", () => {
-  deleteButton.parentElement.style.display = "none";
-  dogSits();
-  animateThroughSprite();
-  settleDownDog();
-});

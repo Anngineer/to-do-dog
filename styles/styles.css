@@ -31,17 +31,17 @@ body {
 }
 
 /* -------MAIN------- */
-main {
+#mountain-range {
   background-image: url("../images/sansbearsMountain.png");
   background-repeat: no-repeat;
   background-size: cover;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -55,24 +55,13 @@ main {
 /* CSS for the navbar to make it stick while scrolling,
     take up the width of the page, and position the flex-items*/
 #navbar {
-  padding: 10px 15px;
+  position: absolute;
+  padding: 18px 20px;
   margin: 0;
   top: 0;
   left: 0;
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  z-index: 500;
 }
 
 #navbar a {
@@ -92,22 +81,10 @@ main {
   height: 2.3rem;
 }
 
-#dog-and-task-wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-}
-
 /* ------ THE DOG ANIMATION SECTION __________*/
 #sprite {
   height: 300px;
   width: 300px;
-  margin-top: 15rem;
-  margin-right: 8rem;
 }
 
 #sprite.sit {
@@ -134,8 +111,6 @@ main {
 /*-------- TO DO LIST SECTON--------*/
 #to-do-section {
   width: 20rem;
-  margin-top: 3rem;
-  margin-bottom: 10rem;
   background-color: #f1f0e4;
   border-radius: 20px;
   -webkit-box-shadow: 3px -3px 10px #545f590a, -3px 0 10px #545f590a;
