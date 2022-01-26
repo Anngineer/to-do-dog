@@ -133,13 +133,11 @@ main {
 
 /*-------- TO DO LIST SECTON--------*/
 #to-do-section {
-  width: clamp(330px, 20rem, 40rem);
+  width: 20rem;
   margin-top: 3rem;
   margin-bottom: 10rem;
   background-color: #f1f0e4;
   border-radius: 20px;
-  -webkit-box-shadow: 3px -3px 10px #545f593b, -3px 0 10px #545f593b;
-          box-shadow: 3px -3px 10px #545f593b, -3px 0 10px #545f593b;
   -webkit-box-shadow: 3px -3px 10px #545f590a, -3px 0 10px #545f590a;
           box-shadow: 3px -3px 10px #545f590a, -3px 0 10px #545f590a;
 }
@@ -154,7 +152,7 @@ h3 {
 }
 
 div.ul-wrapper {
-  height: clamp(5rem, 16rem, 80rem);
+  height: 16rem;
   overflow-y: auto;
 }
 
