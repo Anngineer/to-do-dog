@@ -208,9 +208,9 @@ newTaskInput.addEventListener("keyup", ({ key }) => {
 
 function createNewListItem() {
   //if the example element still exists, delete it.
-  if (exampleLI) {
-    exampleLI.remove();
-  }
+  // if (exampleLI) {
+  //   exampleLI.remove();
+  // }
 
   // Get the string for task from the text box
   const newInnerText = newTaskInput.value;
