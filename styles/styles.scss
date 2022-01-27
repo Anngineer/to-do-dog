@@ -1,6 +1,6 @@
 // SCSS Variables
 $text-dark: #080f0b;
-$sprite-width: 300px;
+// $sprite-width: 300px;
 
 /* BASE RESET so that I can set the padding and margins*/
 /* Generally, I'll make padding- 10px 15px
@@ -36,13 +36,27 @@ body {
 #mountain-range {
   background-image: url("../images/sansbearsMountain.png");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-position: bottom left;
+  position: relative;
+  height: 100vh;
+  min-height: 540px;
+  max-height: 800px;
+  background-size: 1495px 800px;
+
+  // background-size: cover;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   text-align: center;
 }
+
+@media (min-width: 1400px) {
+  #mountain-range {
+    background-size: cover;
+  }
+}
+
 /*-------NAVBAR---------------*/
 /* CSS for the navbar to make it stick while scrolling,
     take up the width of the page, and position the flex-items*/
@@ -80,8 +94,16 @@ body {
 // $sprite-width: 300px; is set at the top of the page
 
 #sprite {
-  height: $sprite-width;
-  width: $sprite-width;
+  // Set the background size if the png is small
+  // Okay, so if we use an image that is smaller than 1200 x 300 you're going to have to use
+  // background-size: 1200px 300px !important;
+  height: 300px;
+  width: 300px;
+  margin: 1rem;
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+
   // margin-top: 15rem;
   // margin-right: 8rem;
 
@@ -112,7 +134,56 @@ body {
   // margin-bottom: 10rem;
   background-color: #f1f0e4;
   border-radius: 20px;
+  margin-right: 22%;
   box-shadow: 3px -3px 10px #545f590a, -3px 0 10px #545f590a;
+}
+
+@media (max-width: 820px) {
+  #sprite {
+    left: -1rem;
+    margin-left: -1rem;
+    margin-bottom: -1rem;
+  }
+  #to-do-section {
+    margin-right: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  #mountain-range {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 735px;
+  }
+
+  #sprite {
+    position: static;
+    margin: 0;
+    margin-top: -3rem;
+    order: 2;
+    justify-self: flex-start;
+    align-self: center;
+  }
+  #to-do-section {
+    margin-top: 4.5rem;
+    margin-right: 0;
+    order: 1;
+  }
+}
+
+@media (max-width: 350px) {
+  #mountain-range {
+    min-height: 660px;
+  }
+  #sprite {
+    width: 200px;
+    height: 200px;
+    background-size: 800px 200px !important;
+  }
+  #to-do-section {
+    width: 85%;
+  }
 }
 
 h3 {
@@ -205,4 +276,15 @@ button#addButton {
   background-color: #152c3e;
   border-bottom-right-radius: 20px;
   border-bottom-left-radius: 20px;
+}
+
+footer {
+  color: #60816e;
+  background-color: #164229;
+  height: 20rem;
+  padding: 4rem;
+  text-align: end;
+  padding-top: 16rem;
+  text-align: right;
+  margin-top: -5px;
 }
