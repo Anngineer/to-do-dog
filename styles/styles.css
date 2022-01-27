@@ -36,10 +36,10 @@ body {
   background-repeat: no-repeat;
   background-position: bottom left;
   position: relative;
+  background-size: 1495px 800px;
   height: 100vh;
   min-height: 540px;
   max-height: 800px;
-  background-size: 1495px 800px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -103,24 +103,23 @@ body {
 }
 
 #sprite.sit {
-  background: url(../images/sprites/300/spritesiteye.png) 0px 0px;
-  background: url(../images/sprites/300/spritesit.png) 0px 0px;
+  background: url(../images/spritesit.png) 0px 0px;
 }
 
 #sprite.play {
-  background: url(../images/sprites/300/spriteplay.png) 0px 0px;
+  background: url(../images/spriteplay.png) 0px 0px;
 }
 
 #sprite.run {
-  background: url(../images/sprites/300/spriterun.png) 0px 0px;
+  background: url(../images/spriterun.png) 0px 0px;
 }
 
 #sprite.sleep {
-  background: url(../images/sprites/300/spritesleep.png) 0px 0px;
+  background: url(../images/spritesleep.png) 0px 0px;
 }
 
 #sprite.sniff {
-  background: url(../images/sprites/300/spritesniff.png) 0px 0px;
+  background: url(../images/spritesniff.png) 0px 0px;
 }
 
 /*-------- TO DO LIST SECTON--------*/

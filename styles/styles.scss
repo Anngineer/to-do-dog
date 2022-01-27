@@ -38,10 +38,10 @@ body {
   background-repeat: no-repeat;
   background-position: bottom left;
   position: relative;
+  background-size: 1495px 800px;
   height: 100vh;
   min-height: 540px;
   max-height: 800px;
-  background-size: 1495px 800px;
 
   // background-size: cover;
   display: flex;
@@ -109,20 +109,20 @@ body {
 
   // SCSS FOR CHANGING POSITIONS
   &.sit {
-    background: url(../images/sprites/300/spritesiteye.png) 0px 0px;
-    background: url(../images/sprites/300/spritesit.png) 0px 0px;
+    // background: url(../images/sprites/300/spritesiteye.png) 0px 0px;
+    background: url(../images/spritesit.png) 0px 0px;
   }
   &.play {
-    background: url(../images/sprites/300/spriteplay.png) 0px 0px;
+    background: url(../images/spriteplay.png) 0px 0px;
   }
   &.run {
-    background: url(../images/sprites/300/spriterun.png) 0px 0px;
+    background: url(../images/spriterun.png) 0px 0px;
   }
   &.sleep {
-    background: url(../images/sprites/300/spritesleep.png) 0px 0px;
+    background: url(../images/spritesleep.png) 0px 0px;
   }
   &.sniff {
-    background: url(../images/sprites/300/spritesniff.png) 0px 0px;
+    background: url(../images/spritesniff.png) 0px 0px;
   }
 }
 
