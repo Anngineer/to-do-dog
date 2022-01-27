@@ -109,8 +109,10 @@ body {
 
   // SCSS FOR CHANGING POSITIONS
   &.sit {
-    // background: url(../images/sprites/300/spritesiteye.png) 0px 0px;
     background: url(../images/spritesit.png) 0px 0px;
+    // background: url(../images/spritesitreverse.png) 0px 0px;
+    background: url(../images/spritesitopeneye.png) 0px 0px;
+    background: url(../images/spritesitopeneyesubdued.png) 0px 0px;
   }
   &.play {
     background: url(../images/spriteplay.png) 0px 0px;

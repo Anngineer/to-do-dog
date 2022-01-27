@@ -104,6 +104,8 @@ body {
 
 #sprite.sit {
   background: url(../images/spritesit.png) 0px 0px;
+  background: url(../images/spritesitopeneye.png) 0px 0px;
+  background: url(../images/spritesitopeneyesubdued.png) 0px 0px;
 }
 
 #sprite.play {
