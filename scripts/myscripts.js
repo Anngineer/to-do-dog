@@ -109,6 +109,12 @@ dogImage.addEventListener("click", () => {
   // animateThroughSprite();
 });
 
+dogImage.addEventListener("dblclick", () => {
+  dogPlays();
+  animateThroughSprite();
+  settleDownDog();
+});
+
 // Functions for pulling up other sprites
 function dogSits() {
   dogImage.classList = ["sit"];
