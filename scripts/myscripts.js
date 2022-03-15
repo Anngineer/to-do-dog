@@ -161,11 +161,29 @@ const newTaskInput = document.getElementById("newTaskInput");
 // Locate the button for adding a new task item.
 const addButton = document.getElementById("addButton");
 
-//Create an array to store active tasks to use in the future.
-const savedTaskList = [];
-
 //Name the example li so it can be deleted on the first run
 const exampleLI = document.getElementById("example-li");
+
+//Check to see if there is local storage. If not,
+//Create an array to store active tasks to use in the future.
+let savedTaskList = [];
+let localTaskList = [];
+window.addEventListener("load", function () {
+  //Once the window has loaded,
+
+  if (this.localStorage.getItem("localList")) {
+    //Check to see if there is a locally saved list
+    exampleLI.remove(); //If there is one, remove the exampleLI
+    let oldItems = this.localStorage.getItem("localList"); // Save the local storage list
+    let oldItemsArray = oldItems.split("___"); //Split up the string into an array
+    savedTaskList = oldItemsArray; // save this as the savedTaskList and localTaskList to be able to edit it later
+    localTaskList = oldItemsArray;
+    savedTaskList.map((listPhrase) => createLocalListItem(listPhrase)); // Map these onto the list
+    // If there is anything saved, make those into items. Otherwise, just show the automatic first item.
+  } else {
+    // If there isn't anything saved locally, we'll just show the exampleLI.
+  }
+});
 
 // There were some issues where the checkbox loaded checked, so if that happens again, use
 var checkbox = document.querySelector("input");
@@ -210,16 +228,16 @@ newTaskInput.addEventListener("keyup", ({ key }) => {
   // ADD ANIMATION OF EXCITEMENT
 });
 
-/*--------------------FUNCTION for creating new list items -----------------*/
-
-function createNewListItem() {
+//--------------------------------------
+// ------------------FUNCTION to create List Item with locally saved items
+function createLocalListItem(listPhrase) {
   //if the example element still exists, delete it.
   // if (exampleLI) {
   //   exampleLI.remove();
   // }
 
   // Get the string for task from the text box
-  const newInnerText = newTaskInput.value;
+  const newInnerText = listPhrase;
 
   // Get the number for the new item's ID with the task list Ul's length
   const lengthUL = document.getElementById("task-list-UL").childElementCount;
@@ -230,8 +248,6 @@ function createNewListItem() {
   const newTaskItemElement = document.createElement("li");
   newTaskItemElement.classList = "list-item";
   newTaskItemElement.id = newID;
-  // newTaskItemElement.innerText = newInnerText;
-  savedTaskList.push(newInnerText);
 
   //make a left side div with the inner text of the value
   const leftDiv = document.createElement("div");
@@ -267,6 +283,95 @@ function createNewListItem() {
     var stringToDelete = parentLI.innerText.slice(0, -1);
     const index = savedTaskList.indexOf(stringToDelete);
     savedTaskList.splice(index, 1);
+    let localList = savedTaskList.join("___");
+    this.localStorage.setItem("localList", localList);
+    parentLI.style.display = "none";
+    //ADD ANIMATION OF REWARD
+    dogSits();
+    animateThroughSprite();
+    settleDownDog();
+  });
+
+  //Insert the li element into the document
+  const parentUL = document.getElementById("task-list-UL");
+  parentUL.appendChild(newTaskItemElement);
+  // dogSniffs();
+  // animateThroughSprite();
+  // settleDownDog();
+  /* SUMMARY OF THIS FUNCTION 
+    it's externally called when you click on addButton or when you hit ENTER inside the textbox 
+    1) take the value of the input text box and save that
+    2) create a new id for the new li, which will be li + lengthOfItemList
+    3) make a const for the text of 
+        <li id="list-itemLENGTHOFLISTPLUSONE" class="list-item "><input type="checkbox" class="checkbox checkbox1" name="NEWCONST" id="">NEWCONST<button>x</button></li>
+    4) We don't need to append that on to the local list
+    5) add an event listener to see if that one is completed
+    and another event listener to delete/display:none;
+    */
+}
+//--------------------------------------
+
+/*--------------------FUNCTION for creating new list items -----------------*/
+
+function createNewListItem() {
+  //if the example element still exists, delete it.
+  // if (exampleLI) {
+  //   exampleLI.remove();
+  // }
+
+  // Get the string for task from the text box
+  const newInnerText = newTaskInput.value;
+
+  // Get the number for the new item's ID with the task list Ul's length
+  const lengthUL = document.getElementById("task-list-UL").childElementCount;
+  const newLength = lengthUL + 1;
+
+  // Create the new li element with an ID, classList, innerText, and then adding the innerText onto the savedTaskList array.
+  const newID = "list-item" + newLength;
+  const newTaskItemElement = document.createElement("li");
+  newTaskItemElement.classList = "list-item";
+  newTaskItemElement.id = newID;
+  // newTaskItemElement.innerText = newInnerText;
+  savedTaskList.push(newInnerText);
+  let localList = savedTaskList.join("___");
+  this.localStorage.setItem("localList", localList);
+
+  //make a left side div with the inner text of the value
+  const leftDiv = document.createElement("div");
+  leftDiv.classList.add("left-side-of-li");
+  leftDiv.innerText = newInnerText;
+
+  // Create new checkmark element and add it to the li element
+  const newCheckBox = document.createElement("input");
+  const checkBoxClasses = "checkbox checkbox" + newLength;
+  newCheckBox.classList = checkBoxClasses;
+  newCheckBox.type = "checkbox";
+  // Event listener for that checkbox to toggle the class "completed" when clicked
+  newCheckBox.addEventListener("click", () => {
+    newTaskItemElement.classList.toggle("completed");
+    // ADD ANIMATION OF REWARD
+    dogRuns();
+    animateThroughSprite();
+    settleDownDog();
+  });
+
+  //prepend leftDiv onto the new LI, then prepend the checkbox on there.
+  newTaskItemElement.prepend(leftDiv);
+  leftDiv.prepend(newCheckBox);
+
+  //Create delete button and adding it to the end inside the li element
+  const newDeleteButton = document.createElement("button");
+  newDeleteButton.classList = "deleteButton";
+  newDeleteButton.innerHTML = "<i class='fas fa-trash'></i>";
+  newTaskItemElement.appendChild(newDeleteButton);
+  //Event listener to display:none when clicked and take the element's innerText off of the saved tasks array.
+  newDeleteButton.addEventListener("click", () => {
+    const parentLI = newDeleteButton.parentElement;
+    var stringToDelete = parentLI.innerText.slice(0, -1);
+    const index = savedTaskList.indexOf(stringToDelete);
+    savedTaskList.splice(index, 1);
+    let localList = savedTaskList.join("___");
+    this.localStorage.setItem("localList", localList);
     parentLI.style.display = "none";
     //ADD ANIMATION OF REWARD
     dogSits();
