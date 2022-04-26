@@ -316,4 +316,8 @@ footer {
   text-align: right;
   margin-top: -5px;
 }
+
+footer a {
+  color: #60816e;
+}
 /*# sourceMappingURL=styles.css.map */
