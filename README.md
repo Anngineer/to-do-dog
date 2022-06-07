@@ -1,5 +1,7 @@
 # to-do-dog
 
+Live link: [To Do Dog](https://anngineer.github.io/to-do-dog/).
+
 This repository is a to-do-list application with a motivational sidekick, using local storage to remember the to-do items.
 
 ## Details
